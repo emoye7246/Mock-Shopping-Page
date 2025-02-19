@@ -5,7 +5,6 @@ import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/shopDefault
 export const ShopDefault = () => {
 
     const [imgs, updateImages] = useState([])
-    const [carosel, updateCorasel] = useState(0)
     
     useEffect(() => {
 

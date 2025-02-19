@@ -3,6 +3,16 @@
 
 .Electronics{
 
-    @apply flex flex-col w-screen items-center justify-center gap-y-10
+    @apply flex flex-col box-border w-screen items-center justify-center content-center gap-y-10 mt-8
 
+}
+
+.electronicsItems{
+
+    @apply grid grid-cols-3 grid-rows-2 gap-10
+}
+
+.items{
+
+    @apply flex h-[300px] w-[300px] border-1 border-red-300 
 }

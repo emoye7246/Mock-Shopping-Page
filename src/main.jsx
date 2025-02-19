@@ -7,6 +7,9 @@ import { Shopping} from './Shopping/Shopping'
 import { ShopDefault } from './Shopping/shopDefault'
 import { Electronics } from './Shopping/Electronics/electronics'
 import { DefaultPage } from './Page/Page'
+import { Jewelry } from './Shopping/Jewelry/jewlery'
+
+
 const router = createBrowserRouter([
 
   {
@@ -19,12 +22,16 @@ const router = createBrowserRouter([
         element: <Shopping />,
         children: [
           {index: true, element: <ShopDefault />},
-          {path: 'electronics', element: <Electronics />}
+          {path: 'electronics', element: <Electronics />},
+          {path: 'jewelery', element: <Jewelry />}
         ]
       }
     ]
   }
 ])
+
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

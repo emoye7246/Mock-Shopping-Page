@@ -11,7 +11,11 @@ export const Electronics = () => {
             try {
 
             const response = await fetch('https://fakestoreapi.com/products/category/electronics')
-            await response.json().then((response) => updateElectronics(response))
+            await response.json().then((response) => {
+
+                console.log(response)
+                updateElectronics(response)
+            })
             }
             catch(error) {
 
@@ -29,7 +33,7 @@ export const Electronics = () => {
                 {electronics.map((item) => 
 
                     <>
-                        <div>{item.title}</div>
+                        <div className="items">{item.title}</div>
                     </>
                 )}
             </>
