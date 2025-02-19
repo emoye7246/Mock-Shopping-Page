@@ -14,5 +14,5 @@
 
 .items{
 
-    @apply flex h-[300px] w-[300px] border-1 border-red-300 
+    @apply flex h-[300px] w-[300px] border-1 border-red-300 text-center
 }

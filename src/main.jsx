@@ -8,6 +8,8 @@ import { ShopDefault } from './Shopping/shopDefault'
 import { Electronics } from './Shopping/Electronics/electronics'
 import { DefaultPage } from './Page/Page'
 import { Jewelry } from './Shopping/Jewelry/jewlery'
+import { Mens } from './Shopping/Men/Men'
+import { Womens } from './Shopping/Women/women'
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,9 @@ const router = createBrowserRouter([
         children: [
           {index: true, element: <ShopDefault />},
           {path: 'electronics', element: <Electronics />},
-          {path: 'jewelery', element: <Jewelry />}
+          {path: 'jewelery', element: <Jewelry />},
+          {path: 'mens', element: <Mens />},
+          {path: 'womens', element: <Womens />}
         ]
       }
     ]

@@ -15,8 +15,8 @@ export const Shopping = () => {
                 <div id="shopBy">
                     <Link to='electronics'>Electronics</Link>
                     <Link to='jewelery'>Jewlery</Link>
-                    <div>Mens</div>
-                    <div>Womens</div>
+                    <Link to='mens'>Mens</Link>
+                    <Link to='womens'>Womens</Link>
                     
                 </div>
                 <hr />

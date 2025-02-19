@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.Womens{
+
+    @apply flex flex-col box-border content-center justify-evenly items-center gap-y-16 mt-8 w-screen
+}
+
+.womensItems{
+
+    @apply grid grid-cols-3 grid-rows-2 gap-10
+}
+
+.shopWomen{
+
+    @apply flex w-[300px] h-[300px] border-1 border-red-400 text-center
+}
