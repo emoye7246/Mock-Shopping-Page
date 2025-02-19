@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+#Shopping{
+
+    @apply flex flex-col
+}
+#shopBy{
+
+    @apply flex flex-row w-screen justify-evenly items-center h-24
+}
+
+a:hover{
+
+    @apply text-red-400
+}
+
+.shopDefault{
+
+    @apply flex w-screen justify-around
+}
+.ourBrand{
+
+    @apply flex flex-row box-border h-[500px] items-center gap-20
+}
+
+.content{
+
+    @apply flex flex-col gap-5
+}
+
+.header{
+
+    @apply text-2xl text-left
+}
+
+
+
+
+

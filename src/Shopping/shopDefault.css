@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.imageCorasel{
+
+    @apply flex flex-row items-center box-border border-1 border-black rounded-3xl h-[250px] w-[250px] overflow-scroll snap-x snap-mandatory gap-[60px] bg-white 
+
+}

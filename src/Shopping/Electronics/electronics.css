@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+.Electronics{
+
+    @apply flex flex-col w-screen items-center justify-center gap-y-10
+
+}
