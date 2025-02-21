@@ -10,6 +10,11 @@
     @apply grid grid-cols-4 grid-rows-1 gap-x-10
 }
 
+.mensContext{
+
+    @apply flex flex-col
+}
+
 .shopMens{
 
     @apply w-[300px] h-[300px] border-1 border-red-300 text-center

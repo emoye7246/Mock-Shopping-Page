@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Women/women.css'
+import { ShopContext } from "../../App";
 
 export const Womens = () => {
 
@@ -34,9 +35,14 @@ export const Womens = () => {
 
     const ShopWomens = () => {
 
+        const {addItems} = useContext(ShopContext)
+
         const listProducts = womenProduct.map((item, i )=> 
 
-            <div className="shopWomen" key={i}>{item.title}</div>
+            <div key={i} className="forWomen">
+                <div className="shopWomen" key={i}>{item.title}</div>
+                <button onClick={() => addItems(item.title)}>Add To Cart</button>
+            </div>
         )
         return <>{listProducts}</>
     }

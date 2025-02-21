@@ -1,5 +1,6 @@
+import { ShopContext } from '../../App'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Men/Men.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 export const Mens = () => {
 
@@ -33,18 +34,19 @@ export const Mens = () => {
 
     const MensProduct = () => {
 
+        const {addItems} = useContext(ShopContext)
+        const listMen = menProduct.map((item, i) => 
+            
+            <div className='mensContext' key={i}>
 
-        return(
+                <div className='shopMens'>{item.title}</div>
+                <button onClick={() => addItems(item.title)}>Add To Cart</button>
 
-            <>
-                    {menProduct.map((item) => (
-
-                        <>
-                            <div className="shopMens">{item.title}</div>
-                        </>
-                    ))}
-            </>
+            </div>
         )
+
+        return <>{listMen}</>
+
     }
 
     return(

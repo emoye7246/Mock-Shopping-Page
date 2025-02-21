@@ -10,6 +10,11 @@
     @apply grid grid-cols-3 grid-rows-2 gap-10
 }
 
+.forWomen{
+
+    @apply flex flex-col
+}
+
 .shopWomen{
 
     @apply flex w-[300px] h-[300px] border-1 border-red-400 text-center

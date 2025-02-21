@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Jewelry/jewelry.css'
+import { ShopContext } from '../../App'
 
 
 export const Jewelry = () => {
@@ -28,17 +29,19 @@ export const Jewelry = () => {
 
     const Jewls = () => {
 
+            const {addItems} = useContext(ShopContext)
+            
+            const listItem = jewelery.map((item, i) => (
 
-        return (
-            <>
-                {jewelery.map((item, i) => (
+                    <div key={i} className='jewleryI'>
 
-                    <>
                         <div className='Jewls'>{item.title}</div>
-                    </>
-                ))}
-            </>
-        )
+                        <button onClick={() => addItems(item.title)}>Add To Cart</button>
+
+                    </div>
+                ))
+
+                return <>{listItem}</>
     }
 
     return (

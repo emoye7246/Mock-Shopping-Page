@@ -16,3 +16,13 @@
 
     @apply flex h-[300px] w-[300px] border-1 border-red-300 text-center
 }
+
+.myItems{
+
+    @apply flex flex-col
+}
+
+button{
+
+    @apply cursor-pointer
+}

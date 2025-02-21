@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
+import { useContext } from "react"
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Electronics/electronics.css'
+import { ShopContext } from "../../App"
 
 export const Electronics = () => {
 
@@ -18,7 +20,6 @@ export const Electronics = () => {
                 const response = await fetch('https://fakestoreapi.com/products/category/electronics')
                 await response.json().then((response) => {
 
-                    console.log(response)
                     updateElectronics(response)
                     setLoading(false)
                 })
@@ -55,14 +56,20 @@ export const Electronics = () => {
 
     const Shopelectronics = () => {
 
+        const {addItems} = useContext(ShopContext)
+
+
         return(
 
             <>
-                {electronics.map((item) => 
+                {electronics.map((item, i) => 
 
-                    <>
-                        <div className="items">{item.title}</div>
-                    </>
+                      
+                        <div className="myItems" key={i}>
+                            <div className="items">{item.title}</div>
+                            <button onClick={() => addItems(item.title)}>Add Items</button>
+                        </div>
+                    
                 )}
             </>
         )

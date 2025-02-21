@@ -12,6 +12,11 @@
     @apply grid grid-cols-4 grid-rows-1 gap-10
 }
 
+.jewleryI{
+
+    @apply flex flex-col 
+}
+
 .Jewls{
 
     @apply h-[300px] w-[300px] border-1 border-red-300 text-center
