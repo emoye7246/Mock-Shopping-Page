@@ -1,9 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Women/women.css'
 import { ShopContext } from "../../App";
 
 export const Womens = () => {
-
+    const {addItems} = useContext(ShopContext)
     const [womenProduct, setWomen] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -28,35 +27,39 @@ export const Womens = () => {
         }
 
         fetchData()
-    }, [loading])
+    }, [])
 
     if(loading) return <div>Well be with you in one moment</div>
     if(error) return <div>There seems to be a network issue please check your connection and we will try to see whats going on on our end</div>
 
-    const ShopWomens = () => {
-
-        const {addItems} = useContext(ShopContext)
-
-        const listProducts = womenProduct.map((item, i )=> 
-
-            <div key={i} className="forWomen">
-                <div className="shopWomen" key={i}>{item.title}</div>
-                <button onClick={() => addItems(item.title)}>Add To Cart</button>
-            </div>
-        )
-        return <>{listProducts}</>
-    }
 
     return (
 
         <>
-            <div className="Womens">
-                <h2>Shop all Womens Products</h2>
+            <div className="flex flex-col items-center max-w-full min-h-full gap-y-5" >
 
-                <div className="womensItems">
-                    
-                        <ShopWomens />
+                <h2 className="text-3xl m-10" >Shop all Womens Products</h2>
+
+                <div className="grid grid-cols-3 grid-rows-2 content-center gap-4">
+
+                    {womenProduct.map((item, i ) => 
+
+
+                            <div className="flex flex-col items-center justify-center gap-y-5" key={i}>
+
+
+                                <div className="p-20 h-[300px] w-[300px] bg-white flex items-center justify-center max-w-full">
+                                    <img src={item.image} alt="" />
+                                </div>
+
+                                    <div>{item.title}</div>
+                                    <div>${item.price}</div>
+
+                                <button onClick={() => addItems(item.title)}>Add to Cart</button>
+                            </div>
+                    )}
                 </div>
+
             </div>
         </>
     )

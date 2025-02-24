@@ -5,6 +5,8 @@ import { ShopContext } from "../../App"
 
 export const Electronics = () => {
 
+    const {addItems} = useContext(ShopContext)
+    
     const [electronics, updateElectronics] = useState([])
     const [error, setErrors] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -32,59 +34,39 @@ export const Electronics = () => {
             }
         }
         fetchData()
-    }, [loading])
+    }, [])
 
-    if(loading){
-
-        return(
-
-            <>
-                <div>Page is Loading well be right with you</div>
-            </>
-        )
-    }
-
-    if(error){
-
-        return(
-
-            <>
-                <div>There seems to be a network issue please check your connection and we will try to see whats going on on our end</div>
-            </>
-        )
-    }
-
-    const Shopelectronics = () => {
-
-        const {addItems} = useContext(ShopContext)
+    if(loading) return <div>Well be with you in one moment</div>
+    if(error) return <div>There seems to be a network issue please check your connection and we will try to see whats going on on our end</div>
 
 
-        return(
-
-            <>
-                {electronics.map((item, i) => 
-
-                      
-                        <div className="myItems" key={i}>
-                            <div className="items">{item.title}</div>
-                            <button onClick={() => addItems(item.title)}>Add Items</button>
-                        </div>
-                    
-                )}
-            </>
-        )
-    }
 
 
     return (
 
         <>
            <div className="Electronics">
-                <h2>Shop All Electronics</h2>
 
-                <div className="electronicsItems">
-                        <Shopelectronics />
-                </div>
+                <h2 id="header">Shop All Electronics</h2>
+                        
+                        <div className="gridContainer">
+                            {electronics.map((item, i) => 
+
+                                <div className="electronicInfo" key={i}>
+
+                                    <div className="imageContainer">
+                                        <img src={item.image} alt="" />
+                                    </div>
+
+                                    <div>{item.title}</div>
+                                    <div>${item.price}</div>
+
+                                    <button onClick={() => addItems(item.title)}>Add To Cart</button>
+
+                                </div>
+                            
+                            )}
+                        </div>
            </div>
         </>
     )

@@ -3,26 +3,24 @@
 
 .Electronics{
 
-    @apply flex flex-col box-border w-screen items-center justify-center content-center gap-y-10 mt-8
+    @apply flex flex-col content-center justify-evenly items-center max-w-full mt-8 gap-y-15 text-center text-sm
 
 }
 
-.electronicsItems{
+.electronicInfo{
 
-    @apply grid grid-cols-3 grid-rows-2 gap-10
+
+    @apply flex flex-col items-center justify-center max-w-full gap-y-10 mb-10
 }
 
-.items{
+.gridContainer{
 
-    @apply flex h-[300px] w-[300px] border-1 border-red-300 text-center
+    @apply grid grid-cols-3 grid-rows-2 
 }
 
-.myItems{
+.imageContainer{
 
-    @apply flex flex-col
+    @apply flex p-20 border-1 bg-white h-[300px] w-[300px] 
 }
 
-button{
 
-    @apply cursor-pointer
-}

@@ -1,6 +1,7 @@
 import { Link} from 'react-router-dom'
 import { useState} from 'react'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Navbar/Navbar.css'
+import bag from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/parcel.png'
 
 
 
@@ -29,8 +30,8 @@ export const Navbar = () => {
                 </div>
 
                 <div className='myLinks'>
-                    <div>Your Cart</div>
-                    <div>Shopping Cart Image</div>
+                    <Link to='cart'>Your Bag</Link>
+                    <img src={bag} alt="" height={'20px'} width={'20px'} />
                 </div>
             </div>
 

@@ -3,7 +3,7 @@ import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Men/Men.css
 import { useState, useEffect, useContext } from 'react'
 
 export const Mens = () => {
-
+    const {addItems} = useContext(ShopContext)
     const [menProduct, setmenProduct] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -27,37 +27,49 @@ export const Mens = () => {
             }
         }
         fetchData()
-    }, [loading])
+    }, [])
 
     if(loading) return <div>Well be with you soon</div>
     if(error) return <div>There seems to be a network issue please check your connection and we will try to see whats going on on our end</div>
 
-    const MensProduct = () => {
-
-        const {addItems} = useContext(ShopContext)
-        const listMen = menProduct.map((item, i) => 
-            
-            <div className='mensContext' key={i}>
-
-                <div className='shopMens'>{item.title}</div>
-                <button onClick={() => addItems(item.title)}>Add To Cart</button>
-
-            </div>
-        )
-
-        return <>{listMen}</>
-
-    }
-
     return(
+
+    
 
         <>
             <div className="Mens">
-                <h2>Shop All Mens Products</h2>
 
-                <div className="mensItems">
-                    <MensProduct />
-                </div>
+                    <div id='header'>Shop Mens</div>
+
+                    <div className="menProduct">
+                        {menProduct.map((item, i) => 
+
+                            <section id='display'>
+
+                                <div className='productDetails' key={i}>
+                                    
+                                    <div id="images">
+                                        <img src={item.image} alt="" />
+                                    </div>
+
+                                </div>
+
+                                    <div id="information">
+
+                                        <div className="title">{item.title}</div>
+                                        <div>${item.price}</div>
+                                    </div>
+
+                                    <div id='checkout'>
+                                        <button onClick={() => addItems(item.title)}>Add To cart</button>
+                                    </div>
+                            </section>
+
+
+
+                        )}
+                    </div>
+
             </div>
         </>
     )

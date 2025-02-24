@@ -10,6 +10,7 @@ import { DefaultPage } from './Page/Page'
 import { Jewelry } from './Shopping/Jewelry/jewlery'
 import { Mens } from './Shopping/Men/Men'
 import { Womens } from './Shopping/Women/women'
+import { Cart } from './Cart/Cart'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
           {path: 'mens', element: <Mens />},
           {path: 'womens', element: <Womens />}
         ]
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       }
     ]
   }

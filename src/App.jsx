@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import { Navbar } from './Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 
-export const ShopContext = createContext({})
+export const ShopContext = createContext(null)
 
 
 export const App = () => {
