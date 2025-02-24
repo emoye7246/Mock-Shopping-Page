@@ -6,7 +6,7 @@ import { App } from './App'
 import { Shopping} from './Shopping/Shopping'
 import { ShopDefault } from './Shopping/shopDefault'
 import { Electronics } from './Shopping/Electronics/electronics'
-import { DefaultPage } from './Page/Page'
+import { HomePage } from './HomePage/HomePage'
 import { Jewelry } from './Shopping/Jewelry/jewlery'
 import { Mens } from './Shopping/Men/Men'
 import { Womens } from './Shopping/Women/women'
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      {index: true, element: <DefaultPage />},
+      {index: true, element: <HomePage />},
       {
         path: 'shopping', 
         element: <Shopping />,

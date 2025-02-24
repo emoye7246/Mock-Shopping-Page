@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from 'react'
-import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Jewelry/jewelry.css'
 import { ShopContext } from '../../App'
 
 

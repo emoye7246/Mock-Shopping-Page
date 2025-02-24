@@ -1,5 +1,4 @@
 import { ShopContext } from '../../App'
-import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Men/Men.css'
 import { useState, useEffect, useContext } from 'react'
 
 export const Mens = () => {
