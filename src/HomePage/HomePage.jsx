@@ -35,8 +35,6 @@ export const HomePage = () => {
     if(loading) return <div>Wait one moment</div>
     if(error) return <div>Something has went wrong</div>
 
-    let myTan = '#FFECDA'
-
 
     
     
@@ -45,9 +43,9 @@ export const HomePage = () => {
     return (
 
         <>
-                    <div className="max-w-full flex flex-row">
+                    <div className="max-w-full flex flex-row" >
 
-                            <div className="flex flex-col justify-center items-center w-[50vw] bg-[#747373] font-[Crimson]">
+                            <div className="flex flex-col justify-center items-center w-full bg-[#747373] font-[Crimson]">
                                         
                                         <div className='text-start text-[64px] text-[#FFECDA]'>
                                             <div>Shop</div>
@@ -57,7 +55,7 @@ export const HomePage = () => {
 
                             </div>
 
-                            <div className="flex w-[50vw] bg-white ">
+                            <div className="flex w-full bg-white ">
                                       
                                         <img src={products[1].image} alt="display" className='w-[1002px] h-[512px] flex-shrink-0 object-cover object-top'/>
                             </div>
@@ -65,7 +63,6 @@ export const HomePage = () => {
                     </div>
 
                     <div className="flex flex-col items-center justify-center max-w-full bg-[#FFECDA]">
-
                         <div className="flex flex-col items-center ">
                             <h2 className="mt-10 text-[40px] text-black">New Arrivals</h2>
 
@@ -99,8 +96,62 @@ export const HomePage = () => {
                                 }
 
                             </div>
+                    </div>
+
+                    <div className="flex items-center justify-center bg-[#FFECDA]">
+                        <h2 className="text-3xl mt-10">Quick Links</h2>
+                    </div>
+
+                    <div className="min-w-fit min-h-max flex flex-row items-center justify-center">
+
+                            <div className="flex flex-col items-center justify-center">
+
+                                    <div className="w-[50vw] h-[61vh] border-1 border-black overflow-clip cursor-pointer">
+
+                                        <div>Mens</div>
+                                        <img src={products[3].image} alt="" className="object-contain object-center"/>
+                                        
+                                    </div>
+
+                                <div className="flex flex-row">
+                                    
+                                    <div className="w-[25vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
+
+                                        <div>Electronics</div>
+                                        <img src={products[8].image} alt="" className="object-contain object-center"/>
+
+
+                                    </div>
+
+                                    <div className="w-[25vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
+                                        <div>Jewlerey</div>
+                                        <img src={products[6].image} alt="" className="object-contain object-center"/>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+
+                            <div className="flex flex-col">
+
+                                    <div className="w-[50vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
+
+                                        <div>Shop All</div>
+                                        <img src={products[10].image} alt="" className="object-contain object-right"/>
+
+                                    </div>
+                                    <div className="w-[50vw] h-[61vh] border-1 border-black overflow-clip cursor-pointer">
+
+                                        <div>Shop Womens</div>
+                                        <img src={products[15].image} alt="" className="object-contain object-right"/>
+
+                                    </div>
+
+                            </div>
 
                     </div>
+
+
 
         </>
     )

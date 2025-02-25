@@ -21,7 +21,7 @@ export const Navbar = () => {
 
         <>
 
-            <div id="Navbar" className='max-w-full flex flex-row justify-between items-center bg-[#413D3A] drop-shadow-md'>
+            <div id="Navbar" className='max-w-full flex flex-row justify-between items-center bg-[#413D3A] drop-shadow-md m-0 text-white'>
 
                 <div className='myLinks'>
                         <img src={logo} alt="Divine Shopping Logo" className='h-[100px] w-[100px]' />
