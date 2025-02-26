@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { useContext } from "react"
-import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Shopping/Electronics/electronics.css'
 import { ShopContext } from "../../App"
 
 export const Electronics = () => {
@@ -45,16 +44,17 @@ export const Electronics = () => {
     return (
 
         <>
-           <div className="Electronics">
+           <div className="flex flex-col items-center max-w-full min-h-full gap-y-5">
 
-                <h2 id="header">Shop All Electronics</h2>
+                <h2 className="text-3xl m-10" >Shop all Electronics</h2>
+
                         
-                        <div className="gridContainer">
+                        <div className="grid grid-cols-3 grid-rows-2 content-center gap-4">
                             {electronics.map((item, i) => 
 
-                                <div className="electronicInfo" key={i}>
+                                <div className="flex flex-col items-center justify-center gap-y-5" key={i}>
 
-                                    <div className="imageContainer">
+                                    <div className="p-20 h-[300px] w-[300px] bg-white flex items-center justify-center max-w-full">
                                         <img src={item.image} alt="" />
                                     </div>
 

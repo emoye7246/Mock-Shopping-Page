@@ -42,7 +42,7 @@ export const Womens = () => {
 
                 <div className="grid grid-cols-3 grid-rows-2 content-center gap-4">
 
-                    {womenProduct.map((item, i ) => 
+                    {womenProduct.map((item, i) => 
 
 
                             <div className="flex flex-col items-center justify-center gap-y-5" key={i}>

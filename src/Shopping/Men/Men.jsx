@@ -16,7 +16,10 @@ export const Mens = () => {
                 try{
 
                     const response = await fetch(`https://fakestoreapi.com/products/category/men's clothing`)
-                    await response.json().then((response) => setmenProduct(response))
+                    await response.json().then((response) => {
+                        console.log(response)
+                        setmenProduct(response)})
+                    
                     setLoading(false)
                 }catch(err){
 
@@ -31,43 +34,36 @@ export const Mens = () => {
     if(loading) return <div>Well be with you soon</div>
     if(error) return <div>There seems to be a network issue please check your connection and we will try to see whats going on on our end</div>
 
+    // 4 mens products
     return(
 
     
 
         <>
-            <div className="Mens">
+            <div className="flex flex-col items-center max-w-full min-h-full">
 
-                    <div id='header'>Shop Mens</div>
+                <h2 className="text-3xl m-10" >Shop all Mens Products</h2>
 
-                    <div className="menProduct">
-                        {menProduct.map((item, i) => 
-
-                            <section id='display'>
-
-                                <div className='productDetails' key={i}>
-                                    
-                                    <div id="images">
-                                        <img src={item.image} alt="" />
-                                    </div>
-
-                                </div>
-
-                                    <div id="information">
-
-                                        <div className="title">{item.title}</div>
-                                        <div>${item.price}</div>
-                                    </div>
-
-                                    <div id='checkout'>
-                                        <button onClick={() => addItems(item.title)}>Add To cart</button>
-                                    </div>
-                            </section>
+                <div className='grid grid-cols-4 grid-rows-1 content-between gap-4'>
+                     
+                    {menProduct.map((item, i) => 
+                    
+                        <div className="flex flex-col items-center justify-center gap-y-5" key={i}>
 
 
+                            <div className="p-20 h-[300px] w-[300px] bg-white flex items-center justify-center max-w-full">
+                                <img src={item.image} alt="" />
+                            </div>
 
-                        )}
-                    </div>
+                                <div>{item.title}</div>
+                                <div>${item.price}</div>
+
+                            <button onClick={() => addItems(item.title)}>Add to Cart</button>
+                        </div>
+                    )}
+
+                </div>
+                
 
             </div>
         </>

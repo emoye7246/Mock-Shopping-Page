@@ -69,7 +69,7 @@ export const HomePage = () => {
                             <div className="mt-10 mb-7 text-[24px] text-black">Find your ideal product</div>
                         </div>
 
-                            <div className=" grid grid-cols-4 grid-rows-1 max-w-full gap-x-10 m-2">
+                            <div className=" grid grid-cols-4 grid-rows-1 max-w-full gap-x-10">
 
                                 {[
                                     products[0],

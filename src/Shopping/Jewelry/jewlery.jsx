@@ -29,16 +29,17 @@ export const Jewelry = () => {
     return (
 
         <>
-            <div  className="Jewelery">
-                <h2 id='header'>Shop all of our Jewelwey Brands</h2>
-                
+            <div className="flex flex-col items-center max-w-full min-h-full gap-y-5">
 
-                    <div className="gridContainer">
+                    <h2 className="text-3xl m-10" >Shop all of our Jewlerey Brands</h2>
+
+                    <div className="grid grid-cols-4 grid-rows-1">
+                        
                         {jewelery.map((item, i) => 
                         
-                            <div key={i} className='productInfo'>
+                            <div key={i} className="flex flex-col items-center justify-center gap-y-5">
 
-                                <div className="imageContainer">
+                                <div className="p-20 h-[300px] w-[300px] bg-white flex items-center justify-center max-w-full">
                                     <img src={item.image} alt="" />
                                 </div>
 
