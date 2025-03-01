@@ -1,6 +1,5 @@
 import { createContext, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/App.css'
 import { Navbar } from './Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 

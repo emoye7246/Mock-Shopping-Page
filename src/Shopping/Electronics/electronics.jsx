@@ -45,7 +45,7 @@ export const Electronics = () => {
     return (
 
         <>
-           <div className="flex flex-col items-center max-w-full min-h-full gap-y-5">
+           <div className="flex flex-col items-center max-w-full min-h-full gap-y-5 keyframes" id="electronics">
 
                 <h2 className="text-3xl m-10" >Shop all Electronics</h2>
 
