@@ -1,60 +1,123 @@
 import { ShopContext } from '../App'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Cart/Cart.css'
-import {useContext } from 'react'
+import {useContext, useState } from 'react'
 
 export const Cart = () => {
 
-    const {cart} = useContext(ShopContext)
+    const {cart, subtotal} = useContext(ShopContext)
+
+
 
 
     return (
 
         <>
 
-            <div className='flex flex-col w-fit justify-center mt-[50px] ml-[50px]'>
-                <div className='text-[64px] text-[#BD8E89]'>Your Shopping Cart</div>
-                <hr />
-            </div>
+            <div className='max-w-full h-screen flex flex-row justify-between overflow-hidden font-[Crimson]'>
 
-               <div className='flex flex-row max-w-full justify-between mr-[10px] ml-[10px] p-10' >
+                <div className='flex flex-col max-w-fit relative top-20 left-40'>
+
+                    <div className=' flex flex-col'>
+
+                        <div className='text-[#BD8E89] text-4xl font-[Crimson] mb-5'>Your Shopping Cart</div>
+                        <hr className='border-black w-80' />
 
 
-                    <div className='flex flex-col items-start'>
-                        {
-                                    cart.map((item, i) => 
-            
-                                        <div className='flex flex-row items-center text-start max-w-full min-h-full justify-evenly gap-x-[10px]' key={i}>
-                                            
-                                            <div className='flex object-contain w-[150px] h-[100px] p-5 bg-white'>
-                                                <img src={item.image} alt="" />
-                                        </div>
-                                        <div>{item.title}</div>
-                                        <div>{item.quantity}</div>
-                                        <div>{item.price}</div>
-                            
-                                        </div>
-                                    )
-                        }
                     </div>
 
-                    <div className=' max-w-full min-h-full'>
+                    <div className='flex flex-row gap-x-2 justify-end text-end'>
+                                <div>Subtotal:</div>
+                                <div className='text-[20px]'> $ {subtotal}</div>
+                        </div>
 
-                        <form className='flex flex-col gap-y-[20px]'>
-                            <select className='outline-none' >
-                                <option value="Debit">Debit</option>
-                                <option value="Credit">Credit</option>
-                                <option value="Gift Card">Gift Card</option>
-                            </select>
-                            <hr />
+                    <div className='max-w-fit  flex flex-col overflow-y-scroll gap-y-10'>
+
+                        {
+                            cart.map((item, i) => 
+                                
+                                <div className='flex flex-row mt-10 gap-x-10 text-center pb-5' key={i}>
+
+                                    <div className='flex flex-col max-w-fit min-h-full items-center text-center w-[100px] h-[150px] bg-white'>
+
+                                        <img src={item.image} alt="productImage" className='object-contain object-center' />
+                                        
+                                    </div>
+                                    <div> Title: {item.title}</div>
+                                    <div>Quantity: {item.quantity}</div>
+                                    <div className='flex'>Price: ${item.price}</div>
+
+                                </div>
+                            )
+                        }
+
+
+
+                    </div>
+
+                </div>
+
+                
+                <div className='max-w-full h-full bg-[#FFECDA] flex flex-col justify-between'>
+
+                        
+                        <form className='flex flex-col justify-evenly text-start gap-y-28 p-20'>
+
+                                <div className='text-[20px] border-b border-black'>Card Details</div>
+
+                            <div className='flex flex-col gap-y-10'>
+                                <div>Select Card Type</div>
+
+                                <select name="" id="" className='outline-0 border-b'>
+
+                                        <option value="Debit">Debit</option>
+                                        <option value="Credit">Credit</option>
+                                        <option value="Gift">Gift Card</option>
+
+                                    {/* There we go */}
+
+
+                                </select>
+                            </div>
+
+                            <label htmlFor="cardNumber" className='flex flex-col gap-y-3'>
+                                <div>Card Number</div>
+                                <input type="text" className='border-b-1 outline-0' placeholder='XXXX-XXXX-XXXX' />
+                            </label>
+
+
+                            <div className='flex flex-row justify-between'>
+
+                                <label htmlFor="expiry" className='flex flex-col gap-x-3'>
+                                    <div className='mb-4'>Expiry Date</div>
+
+                                    <div className='flex flex-row gap-x-5'>
+
+                                        <input type="text" name="month" id="month" className='border-b-1 max-w-5' />
+
+                                        <div className='border-l border-black rotate-10'></div>
+
+                                        <input type="text" name="year" id="year" className='border-b-1 max-w-5' />
+                                        
+                                    </div>
+                                </label>
+
+                                <label htmlFor="Cvv">
+                                    <div className='mb-4'>Cvv</div>
+                                    <input type="text" name='Code' id='Code' className='border-b-1 max-w-5'  />
+                                </label>
+                            </div>
                             
                         </form>
 
+                        <div className='flex w-full bg-[#747373] p-8 justify-center items-center cursor-pointer hover:bg-black'>
+                            <div className='text-white font-[Crimson]'>Checkout: {subtotal}</div>
+                        </div>
+
+
                     </div>
 
+                </div>
 
-
-
-               </div>
         </>
     )
 }

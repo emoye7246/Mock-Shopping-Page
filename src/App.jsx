@@ -10,6 +10,8 @@ export const ShopContext = createContext(null)
 export const App = () => {
 
   const [cart, setCart] = useState([])
+  const [subtotal, setSubtotal] = useState(0)
+
 
 
   const addItems = (image, title, quantity, price) => {
@@ -17,13 +19,15 @@ export const App = () => {
     const newItem = {id: crypto.randomUUID(),image: image, title: title, quantity: quantity, price: price }
     setCart(prevItem => [...prevItem, newItem])
     console.log(cart)
+
+    setSubtotal(prevTotal => (quantity * price) + prevTotal)
   }
 
 
   return (
 
     <>
-        <ShopContext.Provider value={{cart, addItems}}>
+        <ShopContext.Provider value={{cart, subtotal,  addItems}}>
             <Navbar />
 
             <Outlet />

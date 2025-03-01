@@ -7,6 +7,7 @@ export const Electronics = () => {
     const {addItems} = useContext(ShopContext)
     
     const [electronics, updateElectronics] = useState([])
+    const [quantity, setQuantity] = useState(0)
     const [error, setErrors] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -59,9 +60,13 @@ export const Electronics = () => {
                                     </div>
 
                                     <div>{item.title}</div>
+                                    <label htmlFor="quantity" className="flex flex-row gap-x-2">
+                                        <div>Quantity</div>
+                                        <input type="number" placeholder="0" name="quantity" id="quantity" className="border-1 border-black w-10 text-center rounded-[5px]" onChange={(e) => setQuantity(e.target.value) }/>
+                                    </label>
                                     <div>${item.price}</div>
 
-                                    <button onClick={() => addItems(item.image, item.title, item.quantity, item.price )}>Add To Cart</button>
+                                    <button onClick={() => addItems(item.image, item.title, quantity, item.price )}>Add To Cart</button>
 
                                 </div>
                             

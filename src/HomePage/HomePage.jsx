@@ -1,6 +1,8 @@
 import {useEffect, useState } from "react"
 import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
 
+// Links still need to be created for the homepage boxdes
+
 export const HomePage = () => {
 
     const [loading, setLoading] = useState(true)
