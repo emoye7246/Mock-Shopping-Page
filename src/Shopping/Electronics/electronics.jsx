@@ -61,7 +61,7 @@ export const Electronics = () => {
                                     <div>{item.title}</div>
                                     <div>${item.price}</div>
 
-                                    <button onClick={() => addItems(item.title)}>Add To Cart</button>
+                                    <button onClick={() => addItems(item.image, item.title, item.quantity, item.price )}>Add To Cart</button>
 
                                 </div>
                             

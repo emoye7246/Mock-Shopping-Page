@@ -12,9 +12,9 @@ export const App = () => {
   const [cart, setCart] = useState([])
 
 
-  const addItems = (title) => {
+  const addItems = (image, title, quantity, price) => {
 
-    const newItem = {id: crypto.randomUUID(), title: title}
+    const newItem = {id: crypto.randomUUID(),image: image, title: title, quantity: quantity, price: price }
     setCart(prevItem => [...prevItem, newItem])
     console.log(cart)
   }
