@@ -9,7 +9,7 @@ export const Electronics = () => {
     const {addItems} = useContext(ShopContext)
     
     const [electronics, updateElectronics] = useState([])
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(1)
     const [error, setErrors] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -71,7 +71,7 @@ export const Electronics = () => {
                                     </label>
                                     <div>${item.price}</div>
 
-                                    <button onClick={() => addItems(item.image, item.title, quantity, item.price )}>Add To Cart</button>
+                                    <button onClick={() => addItems(item.image, item.title, quantity, item.price )} className="w-[150px] h-[50px] border-gray-100 border-2 bg-[#ffd8d5] rounded-[14px] hover:bg-[#ffa8a2]">Add To Cart</button>
 
                                 </div>
                             

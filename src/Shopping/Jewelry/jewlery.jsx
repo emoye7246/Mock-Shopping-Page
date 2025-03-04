@@ -7,7 +7,7 @@ import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/
 export const Jewelry = () => {
     const {addItems} = useContext(ShopContext)
     const [jewelery, updateJewlery] = useState([])
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(1)
 
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -64,7 +64,7 @@ export const Jewelry = () => {
                                 </label>
                                 <div>${item.price}</div>
 
-                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)}>Add to Cart</button>
+                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)} className="w-[150px] h-[50px] border-gray-100 border-2 bg-[#ffd8d5] rounded-[14px] hover:bg-[#ffa8a2]">Add to Cart</button>
 
                             </div>
                         )}

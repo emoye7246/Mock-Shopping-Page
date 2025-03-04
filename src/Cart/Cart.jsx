@@ -1,10 +1,11 @@
 import { ShopContext } from '../App'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Cart/Cart.css'
+import trash from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Icons/trash.png'
 import {useContext, useState } from 'react'
 
 export const Cart = () => {
 
-    const {cart, subtotal, setCart, setSubtotal} = useContext(ShopContext)
+    const {cart, subtotal, setCart, setSubtotal, setCartItems} = useContext(ShopContext)
 
     const Checkout = () => {
 
@@ -18,6 +19,14 @@ export const Cart = () => {
 
         setCart([])
         setSubtotal(0)
+        setCartItems(0)
+    }
+
+    const removeItems = (id, quantity, price) => {
+
+        setCart(prevItems => prevItems.filter(item => item.id !== id))
+        setSubtotal(prevPrice => prevPrice - (quantity * price))
+        setCartItems(cart.length - 1)
     }
     
 
@@ -37,15 +46,14 @@ export const Cart = () => {
                         <div className='text-[#BD8E89] text-4xl font-[Crimson] mb-5'>Your Shopping Cart</div>
                         <hr className='border-black w-80' />
 
-
                     </div>
 
                     <div className='flex flex-row gap-x-2 justify-end text-end'>
                                 <div>Subtotal:</div>
-                                <div className='text-[20px]'> $ {subtotal.toFixed(2)}</div>
+                                <div className='text-[20px]'> $ {Math.max(0, subtotal.toFixed(2))}</div>
                         </div>
 
-                    <div className='max-w-fit min-h-fi flex flex-col overflow-y-scroll gap-y-10'>
+                    <div className='max-w-fit flex flex-col overflow-y-scroll gap-y-10'>
 
                         {
                             cart.map((item, i) => 
@@ -60,6 +68,9 @@ export const Cart = () => {
                                     <div> Title: {item.title}</div>
                                     <div>Quantity: {item.quantity}</div>
                                     <div className='flex'>Price: ${item.price}</div>
+                                    
+                                    <img src={trash} alt="trash icon" className='h-[24px] w-[24px] cursor-pointer' onClick={() => removeItems(item.id, item.quantity, item.price)} />
+                                    
 
                                 </div>
                             )

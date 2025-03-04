@@ -1,16 +1,18 @@
 import { Link} from 'react-router-dom'
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import bag from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/parcel.png'
 import logo from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Logo para marca personal en negro y rosa.png'
 import home from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Icons/home .png'
 import shoppingBag from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Icons/shopping-bag.png'
 import shoppingCart from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Icons/shopping-cart.png'
+import { ShopContext } from '../App'
 
 
 
 
 export const Navbar = () => {
         
+    const {cartItems} = useContext(ShopContext)
     // create a button this button needs a couple things 
 
     // category, description, price, title, image
@@ -49,6 +51,9 @@ export const Navbar = () => {
                     <Link to='cart' className='flex flex-row gap-x-2 mr-6'>
                         <div>Your Cart</div>
                         <img src={shoppingCart} alt="shoppingCart" className='h-[32px] w-[32px]' />
+                        <div className='border-2 bg-[#ffd8d5] text-white w-8 h-8 rounded-2xl text-center items-center justify-center'  >
+                                <div>{cartItems}</div>
+                        </div>
                     </Link>
 
                 </div>

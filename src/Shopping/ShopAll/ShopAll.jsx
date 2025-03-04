@@ -7,7 +7,7 @@ export const ShopAll = () => {
 
     const {addItems} = useContext(ShopContext)
     const [loading, setLoading] = useState(true)
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(1)
     const [error, setError] = useState(null)
     const [products, setProducts] = useState([])
 
@@ -73,7 +73,7 @@ export const ShopAll = () => {
                                 </label>
                                 <div>${item.price}</div>
 
-                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)}>Add to Cart</button>
+                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)} className="w-[150px] h-[50px] border-gray-100 border-2 bg-[#ffd8d5] rounded-[14px] hover:bg-[#ffa8a2]" >Add to Cart</button>
 
                         </div>
                     

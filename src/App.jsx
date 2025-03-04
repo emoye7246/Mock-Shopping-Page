@@ -10,6 +10,7 @@ export const App = () => {
 
   const [cart, setCart] = useState([])
   const [subtotal, setSubtotal] = useState(0)
+  const [cartItems, setCartItems] = useState(0)
 
 
 
@@ -20,13 +21,14 @@ export const App = () => {
     console.log(cart)
 
     setSubtotal(prevTotal => (quantity * price) + prevTotal)
+    setCartItems(cartItems => cartItems + 1)
   }
 
 
   return (
 
     <>
-        <ShopContext.Provider value={{cart, subtotal,  addItems, setCart, setSubtotal}}>
+        <ShopContext.Provider value={{cart, subtotal, cartItems, addItems, setCart, setSubtotal, setCartItems}}>
             <Navbar />
 
             <Outlet />
