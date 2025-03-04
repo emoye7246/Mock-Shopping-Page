@@ -26,7 +26,7 @@ export const App = () => {
   return (
 
     <>
-        <ShopContext.Provider value={{cart, subtotal,  addItems}}>
+        <ShopContext.Provider value={{cart, subtotal,  addItems, setCart, setSubtotal}}>
             <Navbar />
 
             <Outlet />

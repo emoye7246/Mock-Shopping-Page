@@ -4,7 +4,22 @@ import {useContext, useState } from 'react'
 
 export const Cart = () => {
 
-    const {cart, subtotal} = useContext(ShopContext)
+    const {cart, subtotal, setCart, setSubtotal} = useContext(ShopContext)
+
+    const Checkout = () => {
+
+        let checkout = setInterval(() => {
+
+            <div>Please Wait</div>
+
+        }, 3000)
+
+        clearInterval(() => checkout)
+
+        setCart([])
+        setSubtotal(0)
+    }
+    
 
 
 
@@ -13,7 +28,7 @@ export const Cart = () => {
 
         <>
 
-            <div className='max-w-full h-screen flex flex-row justify-between overflow-hidden font-[Crimson]'>
+            <div className='max-w-full h-screen flex flex-row justify-between overflow-hidden font-[Crimson] keyframes' id='Cart'>
 
                 <div className='flex flex-col max-w-fit relative top-20 left-40'>
 
@@ -27,10 +42,10 @@ export const Cart = () => {
 
                     <div className='flex flex-row gap-x-2 justify-end text-end'>
                                 <div>Subtotal:</div>
-                                <div className='text-[20px]'> $ {subtotal}</div>
+                                <div className='text-[20px]'> $ {subtotal.toFixed(2)}</div>
                         </div>
 
-                    <div className='max-w-fit  flex flex-col overflow-y-scroll gap-y-10'>
+                    <div className='max-w-fit min-h-fi flex flex-col overflow-y-scroll gap-y-10'>
 
                         {
                             cart.map((item, i) => 
@@ -73,15 +88,12 @@ export const Cart = () => {
                                         <option value="Credit">Credit</option>
                                         <option value="Gift">Gift Card</option>
 
-                                    {/* There we go */}
-
-
                                 </select>
                             </div>
 
                             <label htmlFor="cardNumber" className='flex flex-col gap-y-3'>
                                 <div>Card Number</div>
-                                <input type="text" className='border-b-1 outline-0' placeholder='XXXX-XXXX-XXXX' />
+                                <input type="text" className='border-b-1 outline-0' placeholder='XXXX-XXXX-XXXX' minLength={16}  required />
                             </label>
 
 
@@ -92,25 +104,25 @@ export const Cart = () => {
 
                                     <div className='flex flex-row gap-x-5'>
 
-                                        <input type="text" name="month" id="month" className='border-b-1 max-w-5' />
+                                        <input type="text" name="month" id="month" className='border-b-1 max-w-5' min={1} max={12} required />
 
                                         <div className='border-l border-black rotate-10'></div>
 
-                                        <input type="text" name="year" id="year" className='border-b-1 max-w-5' />
+                                        <input type="text" name="year" id="year" className='border-b-1 max-w-5' min={2025} max={2080} required/>
                                         
                                     </div>
                                 </label>
 
                                 <label htmlFor="Cvv">
                                     <div className='mb-4'>Cvv</div>
-                                    <input type="text" name='Code' id='Code' className='border-b-1 max-w-5'  />
+                                    <input type="text" name='Code' id='Code' className='border-b-1 max-w-5' required minLength={3} maxLength={3} />
                                 </label>
                             </div>
                             
                         </form>
 
                         <div className='flex w-full bg-[#747373] p-8 justify-center items-center cursor-pointer hover:bg-black'>
-                            <div className='text-white font-[Crimson]'>Checkout: {subtotal}</div>
+                            <div className='text-white font-[Crimson]' onClick={() => Checkout()}>Checkout: {subtotal}</div>
                         </div>
 
 

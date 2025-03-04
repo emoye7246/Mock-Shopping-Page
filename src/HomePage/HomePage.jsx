@@ -1,10 +1,15 @@
-import {useEffect, useState } from "react"
+import {useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
+import { ShopContext } from "../App"
 
 // Links still need to be created for the homepage boxdes
 
 export const HomePage = () => {
 
+    const {addItems} = useContext(ShopContext)
+
+    const [quantity, setQuantity] = useState(0)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [products, setProducts] = useState([])
@@ -45,7 +50,7 @@ export const HomePage = () => {
     return (
 
         <>
-                    <div className="max-w-full flex flex-row" >
+                    <div className="max-w-full flex flex-row keyframes" id='Homepage' >
 
                             <div className="flex flex-col justify-center items-center w-full bg-[#747373] font-[Crimson]">
                                         
@@ -53,7 +58,9 @@ export const HomePage = () => {
                                             <div>Shop</div>
                                             <div>Mens</div>
                                         </div>
-                                       <button className='border-1 border-black h-[36px] w-[260px] bg-black text-[#FFECDA] rounded-[10px] hover:bg-[#292929]'>Shop Now</button>
+                                        <Link to='shopping/mens'>
+                                            <button className='border-1 border-black h-[36px] w-[260px] bg-black text-[#FFECDA] rounded-[10px] hover:bg-[#292929]'>Shop Now</button>
+                                        </Link>
 
                             </div>
 
@@ -71,27 +78,33 @@ export const HomePage = () => {
                             <div className="mt-10 mb-7 text-[24px] text-black">Find your ideal product</div>
                         </div>
 
-                            <div className=" grid grid-cols-4 grid-rows-1 max-w-full gap-x-10">
+                            <div className='grid grid-cols-4 grid-rows-1 content-between gap-12'>
 
                                 {[
-                                    products[0],
                                     products[3],
-                                    products[7],
-                                    products[15]
+                                    products[6],
+                                    products[2],
+                                    products[5]
                                 ].map((item, i) => 
                                     
-                                    <div key={i} className="flex flex-col gap-y-10">
+                                    <div key={i} className="flex flex-col items-center justify-center gap-y-5">
                                         
-                                        <div className="w-[300px] h-[300px] bg-white rounded-[14px]">
-                                            <img src={item.image} alt="" className="w-[300px] h-[300px] object-contain object-center"/>
+                                        <div className="p-20 h-[300px] w-[300px] bg-white flex items-center justify-center max-w-full rounded-2xl">
+                                            <img src={item.image} alt="" />
                                         </div>
 
-                                        <div className="text-center text-black flex flex-col gap-y-10" >
 
                                             <div>{item.title}</div>
+                                            <label htmlFor="mensQuanity" className="flex flex-row gap-x-2">
+                                                <div>Quanitity</div>
+                                                <input type="number" min={0} max={10} name="mensQuantity" id="mensQuantity" className="border-1 border-black w-10 text-center rounded-[5px] bg-white" onChange={(e) => setQuantity(e.target.value)} />
+                                            </label>
                                             <div>${item.price}</div>
+                                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)}>Add to Cart</button>
 
-                                        </div>
+
+
+
 
                                     </div>
                                 )
@@ -110,8 +123,11 @@ export const HomePage = () => {
 
                                     <div className="w-[50vw] h-[61vh] border-1 border-black overflow-clip cursor-pointer">
 
-                                        <div>Mens</div>
-                                        <img src={products[3].image} alt="" className="object-contain object-center"/>
+                                        <Link to='shopping/mens'>
+                                            <div>Mens</div>
+                                            <img src={products[3].image} alt="" className="object-contain object-center"/>
+                                        </Link>
+
                                         
                                     </div>
 
@@ -119,15 +135,23 @@ export const HomePage = () => {
                                     
                                     <div className="w-[25vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
 
-                                        <div>Electronics</div>
-                                        <img src={products[8].image} alt="" className="object-contain object-center"/>
+                                        <Link to='shopping/electronics'>
+                                            <div>Electronics</div>
+                                            <img src={products[8].image} alt="" className="object-contain object-center"/>
+                                        </Link>
+
 
 
                                     </div>
 
                                     <div className="w-[25vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
-                                        <div>Jewlerey</div>
-                                        <img src={products[6].image} alt="" className="object-contain object-center"/>
+
+                                        <Link to='shopping/jewelery'>
+                                            <div>Jewlerey</div>
+                                            <img src={products[6].image} alt="" className="object-contain object-center"/>
+                                        </Link>
+
+
                                     </div>
 
                                 </div>
@@ -138,14 +162,20 @@ export const HomePage = () => {
 
                                     <div className="w-[50vw] h-[36vh] border-1 border-black overflow-clip cursor-pointer">
 
-                                        <div>Shop All</div>
-                                        <img src={products[10].image} alt="" className="object-contain object-right"/>
+                                        <Link to='shopping/shopAll'>
+                                            <div>Shop All</div>
+                                            <img src={products[10].image} alt="" className="object-contain object-right"/>
+                                        </Link>
+
 
                                     </div>
                                     <div className="w-[50vw] h-[61vh] border-1 border-black overflow-clip cursor-pointer">
 
-                                        <div>Shop Womens</div>
-                                        <img src={products[15].image} alt="" className="object-contain object-right"/>
+                                        <Link to='shopping/womens'>
+                                            <div>Shop Womens</div>
+                                            <img src={products[15].image} alt="" className="object-contain object-right"/>
+                                        </Link>
+
 
                                     </div>
 

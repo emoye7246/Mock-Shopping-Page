@@ -7,6 +7,7 @@ export const ShopAll = () => {
 
     const {addItems} = useContext(ShopContext)
     const [loading, setLoading] = useState(true)
+    const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState(null)
     const [products, setProducts] = useState([])
 
@@ -47,9 +48,12 @@ export const ShopAll = () => {
     return (
 
         <>
-            <div className="flex flex-col items-center max-w-full min-h-full gap-y-5">
-
-                <h2 className="text-3xl m-10" >Shop All</h2>
+            <div className="flex flex-col items-center max-w-full min-h-full gap-y-5 keyframes" id="ShopAll">
+        
+                <div>
+                    <h2 className="text-3xl m-10 text-[#BD8E89] font-[Crimson]" >Shop All</h2>
+                    <hr />
+                </div>
 
                 <div className="grid grid-cols-4 grid-rows-5 content-center gap-4">
 
@@ -62,10 +66,14 @@ export const ShopAll = () => {
                                     <img src={item.image} alt="" />
                             </div>
 
-                                    <div>{item.title}</div>
-                                    <div>${item.price}</div>
+                            <div>{item.title}</div>
+                                <label htmlFor="allQuanity" className="flex flex-row gap-x-2">
+                                    <div>Quanitity</div>
+                                    <input type="number" min={0} max={10} name="allQuantity" id="allQuantity" className="border-1 border-black w-10 text-center rounded-[5px]" onChange={(e) => setQuantity(e.target.value)} />
+                                </label>
+                                <div>${item.price}</div>
 
-                                <button onClick={() => addItems(item.title)}>Add to Cart</button>
+                            <button onClick={() => addItems(item.image, item.title, quantity, item.price)}>Add to Cart</button>
 
                         </div>
                     

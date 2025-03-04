@@ -22,7 +22,7 @@
     }
 }
 
-#electronics{
+#electronics, #Mens, #Womens, #Jewlry, #ShopAll, #Homepage, #Cart{
      
     animation: fade-in 1s ease-out forwards;
 }

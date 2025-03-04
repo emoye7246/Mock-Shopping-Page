@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { useContext } from "react"
 import { ShopContext } from "../../App"
 
+import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
+
 export const Electronics = () => {
 
     const {addItems} = useContext(ShopContext)
@@ -47,7 +49,10 @@ export const Electronics = () => {
         <>
            <div className="flex flex-col items-center max-w-full min-h-full gap-y-5 keyframes" id="electronics">
 
-                <h2 className="text-3xl m-10" >Shop all Electronics</h2>
+                <div>
+                    <h2 className="text-3xl m-10 mb-4 text-[#BD8E89] font-[Crimson]" >Shop all Electronics</h2>
+                    <hr />
+                </div>
 
                         
                         <div className="grid grid-cols-3 grid-rows-2 content-center gap-4">
@@ -62,7 +67,7 @@ export const Electronics = () => {
                                     <div>{item.title}</div>
                                     <label htmlFor="quantity" className="flex flex-row gap-x-2">
                                         <div>Quantity</div>
-                                        <input type="number" placeholder="0" name="quantity" id="quantity" className="border-1 border-black w-10 text-center rounded-[5px]" onChange={(e) => setQuantity(e.target.value) }/>
+                                        <input type="number" min={0} max={10} placeholder="0" name="quantity" id="quantity" className="border-1 border-black w-10 text-center rounded-[5px]" onChange={(e) => setQuantity(e.target.value) }/>
                                     </label>
                                     <div>${item.price}</div>
 
