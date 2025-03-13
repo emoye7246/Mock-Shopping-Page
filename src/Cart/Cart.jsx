@@ -1,6 +1,5 @@
 import { ShopContext } from '../App'
 import { myIcons } from '../icons'
-import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Cart/Cart.css'
 import {useContext} from 'react'
 
 export const Cart = () => {
