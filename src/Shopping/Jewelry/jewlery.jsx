@@ -1,8 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
 import { ShopContext } from '../../App'
-import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
-
-
 
 export const Jewelry = () => {
     const {addItems} = useContext(ShopContext)
@@ -43,7 +40,7 @@ export const Jewelry = () => {
             <div className="flex flex-col items-center max-w-full min-h-full gap-y-5 keyframes" id='Jewlry'>
 
                     <div>
-                        <h2 className="text-3xl m-10 mb-4 text-[#BD8E89] font-[Crimson]" >Shop all of our Jewlerey Brands</h2>
+                        <h2 className="text-3xl m-10 mb-4 text-[#BD8E89]" style={{fontFamily: 'Crimson'}} >Shop all of our Jewlerey Brands</h2>
                         <hr />
                     </div>
 

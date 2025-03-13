@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
-import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
 
 export const Shopping = () => {
 
@@ -17,7 +15,7 @@ export const Shopping = () => {
                 <div className="relative flex flex-col items-center justify-between min-h-screen h-screen p-10 border-1 border-black bg-[#FFECDA]">
 
                     <div className="min-w-1">
-                        <h2 className="text-2xl text-center font-[Crimson]">Category</h2>
+                        <h2 className="text-2xl text-center " style={{fontFamily: 'Crimson'}}>Category</h2>
                         <hr className="text-black bg-black w-[150px]" />
                     </div>
                     

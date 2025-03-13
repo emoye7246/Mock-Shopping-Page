@@ -1,3 +1,11 @@
+ @font-face {
+  font-family: 'Crimson';
+  src: url('/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+ }
+ 
+ 
  body{
 
   margin: 0px;

@@ -1,7 +1,7 @@
 import { ShopContext } from '../App'
+import { myIcons } from '../icons'
 import '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/Cart/Cart.css'
-import trash from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Icons/trash.png'
-import {useContext, useState } from 'react'
+import {useContext} from 'react'
 
 export const Cart = () => {
 
@@ -37,13 +37,13 @@ export const Cart = () => {
 
         <>
 
-            <div className='max-w-full h-screen flex flex-row justify-between overflow-hidden font-[Crimson] keyframes' id='Cart'>
+            <div className='max-w-full h-screen flex flex-row justify-between overflow-hidden keyframes' style={{fontFamily: 'Crimson'}} id='Cart'>
 
                 <div className='flex flex-col max-w-fit relative top-20 left-40'>
 
                     <div className=' flex flex-col'>
 
-                        <div className='text-[#BD8E89] text-4xl font-[Crimson] mb-5'>Your Shopping Cart</div>
+                        <div className='text-[#BD8E89] text-4xl mb-5' style={{fontFamily: 'Crimson'}}>Your Shopping Cart</div>
                         <hr className='border-black w-80' />
 
                     </div>
@@ -53,12 +53,12 @@ export const Cart = () => {
                                 <div className='text-[20px]'> $ {Math.max(0, subtotal.toFixed(2))}</div>
                         </div>
 
-                    <div className='max-w-fit flex flex-col overflow-y-scroll gap-y-10'>
+                    <div className='w-[65vw] flex flex-col overflow-y-scroll gap-y-10'>
 
                         {
                             cart.map((item, i) => 
                                 
-                                <div className='flex flex-row mt-10 gap-x-10 text-center pb-5' key={i}>
+                                <div className='flex flex-row mt-10 gap-x-10 text-center pb-5 w-full' key={i}>
 
                                     <div className='flex flex-col max-w-fit min-h-full items-center text-center w-[100px] h-[150px] bg-white'>
 
@@ -69,7 +69,7 @@ export const Cart = () => {
                                     <div>Quantity: {item.quantity}</div>
                                     <div className='flex'>Price: ${item.price}</div>
                                     
-                                    <img src={trash} alt="trash icon" className='h-[24px] w-[24px] cursor-pointer' onClick={() => removeItems(item.id, item.quantity, item.price)} />
+                                    <img src={myIcons.trash} alt="trash icon" className='h-[24px] w-[24px] cursor-pointer' onClick={() => removeItems(item.id, item.quantity, item.price)} />
                                     
 
                                 </div>

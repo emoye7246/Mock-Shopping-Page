@@ -1,6 +1,5 @@
 import {useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Crimson from '/Users/elijahmoye/Desktop/shoppingCart/shopping/src/assets/Fonts/Crimson_Text/CrimsonText-Regular.ttf'
 import { ShopContext } from "../App"
 
 // Links still need to be created for the homepage boxdes
@@ -52,7 +51,7 @@ export const HomePage = () => {
         <>
                     <div className="max-w-full flex flex-row keyframes" id='Homepage' >
 
-                            <div className="flex flex-col justify-center items-center w-full bg-[#747373] font-[Crimson]">
+                            <div className="flex flex-col justify-center items-center w-full bg-[#747373]" style={{fontFamily: 'Crimson'}}>
                                         
                                         <div className='text-start text-[64px] text-[#FFECDA]'>
                                             <div>Shop</div>
