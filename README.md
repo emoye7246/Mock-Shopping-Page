@@ -22,7 +22,7 @@ Frontend: React.js, JavaScript, HTML, CSS
 
 Routing: React Router for navigation
 
-API: Fetching product data from a backend or public API
+API: Fetching product data from a public API
 
 Styling: Tailwind CSS for modern UI/UX
 
